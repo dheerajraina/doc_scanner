@@ -34,9 +34,10 @@ class TopBar extends StatelessWidget {
                 children: [
                   drawer,
                   Text(
-                    "<Space For Logo>",
-                    style: TextStyle(color: Pallete().customWhite),
+                    "Logo",
+                    style:Theme.of(context).textTheme.headline5!.copyWith(color: Pallete().customWhite),
                   ),
+                  Icon(Icons.terrain_sharp,color: Pallete().customWhite,size: screenWidth*0.1,),
                   IconButton(
                       onPressed: () {},
                       icon: Icon(

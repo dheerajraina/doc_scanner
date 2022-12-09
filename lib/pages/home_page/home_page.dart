@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key, required this.title});
 
-  final homeStateController=Get.put(HomePageState());
+  final homeStateController = Get.put(HomePageState());
 
   final String title;
 
@@ -20,7 +20,8 @@ class MyHomePage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
           key: _key,
-          drawer: customDrawer(Pallete().customBlack,screenWidth*0.1,context,Pallete().customWhite,Pallete().customRed),
+          drawer: customDrawer(Pallete().customBlack, screenWidth * 0.1,
+              context, Pallete().customWhite, Pallete().customRed),
           body: Container(
               constraints: BoxConstraints(maxHeight: screenHeight),
               // color: Colors.amber,
@@ -30,8 +31,24 @@ class MyHomePage extends StatelessWidget {
                     drawer: drawerButton(
                         _key, screenWidth * 0.1, Pallete().customWhite),
                   ),
-                  Container(
-                    height: screenHeight * 0.8,
+                  Advertisement(
+                      bgColor: Pallete().customWhite,
+                      height: screenHeight * 0.15,
+                      width: screenWidth),
+                  Stack(
+                    children: [
+                      CustomNavBar(
+                        height: screenHeight * 0.6,
+                        optionColor: Pallete().customBlack,
+                      ),
+                      Positioned(
+                        right: 50,
+                        bottom: 120,
+                          child: CreateNew(
+                              color: Pallete().customLightRed,
+                              height: screenHeight * 0.06,
+                              width: screenWidth * 0.4))
+                    ],
                   )
                 ],
               ))),
